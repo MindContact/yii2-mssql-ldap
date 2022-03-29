@@ -7,7 +7,7 @@
 #-------------------------------------------------------------------
 
     # Using Yii2's official docker image as base                                                                        Step 1
-FROM yiisoftware/yii2-php:7.3-apache
+FROM yiisoftware/yii2-php:8.1-apache
 
 
 #-------------------------------------------------------------------
@@ -32,8 +32,7 @@ ENV PHP_ENABLE_XDEBUG 1
 
 # Configure LDAP.
 RUN apt-get update \
- && apt-get install libldap2-dev -y \
- && rm -rf /var/lib/apt/lists/* \
+ && apt-get install gnupg libldap2-dev -y \
  && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
  && docker-php-ext-install ldap
 
@@ -41,6 +40,10 @@ RUN apt-get update \
 #-------------------------------------------------------------------
 # III. SET UP DATABASE DRIVERS
 #-------------------------------------------------------------------
+
+    # Install multiarch support
+RUN curl -O http://ftp.de.debian.org/debian/pool/main/g/glibc/multiarch-support_2.28-10+deb10u1_amd64.deb \
+    && dpkg -i multiarch-support_2.28-10+deb10u1_amd64.deb
 
     # install ODBC:                                                                                                     Step 5
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
