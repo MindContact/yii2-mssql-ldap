@@ -25,7 +25,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
         wget
 
     # Install xdebug 2.9.2                                                                                              Step 3
-RUN pecl install xdebug
+#RUN pecl install xdebug
 
     # Set Yii2 image's environment variable                                                                             Step 4
 ENV PHP_ENABLE_XDEBUG 1
