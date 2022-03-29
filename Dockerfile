@@ -30,6 +30,13 @@ RUN pecl install xdebug
     # Set Yii2 image's environment variable                                                                             Step 4
 ENV PHP_ENABLE_XDEBUG 1
 
+# Configure LDAP.
+RUN apt-get update \
+ && apt-get install libldap2-dev -y \
+ && rm -rf /var/lib/apt/lists/* \
+ && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
+ && docker-php-ext-install ldap
+
 
 #-------------------------------------------------------------------
 # III. SET UP DATABASE DRIVERS
