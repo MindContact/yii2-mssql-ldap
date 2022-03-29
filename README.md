@@ -1,25 +1,25 @@
-# Yii2-mssql
+# Yii2-mssql-ldap
 
 ### Description
 
-This image is hosted on [DockerHub](https://hub.docker.com/r/tamuarchi/yii2-mssql/). 
-It contains a Yii2 Framework environment with Microsoft's SQL drivers along with an Apache server.
+This image is hosted on [DockerHub](https://hub.docker.com/r/mindcontact/yii2-mssql-ldap/) and based from the work of [architexas/yii2-mssql](https://github.com/architexas/yii2-mssql).
+It contains a Yii2 Framework environment with Microsoft's SQL drivers and LDAP support along with an Apache server.
 
-**BASE IMAGE:** [yiisoftware/yii2-php:7.3-apache](https://github.com/yiisoft/yii2-docker)  
-**LATEST VERSION:** 2.0.0
+**BASE IMAGE:** [yiisoftware/yii2-php:8.1-apache](https://github.com/yiisoft/yii2-docker)  
+**LATEST VERSION:** 1.0.0
 
 ### To Use
 
 Pull image from Docker Hub  
-`docker pull tamuarchi/yii2-mssql`
+`docker pull mindcontact/yii2-mssql-ldap`
 
 Alternatively, use image in a docker-compose file.  
-`FROM tamuarchi/yii2-mssql:latest`
+`FROM mindcontact/yii2-mssql-ldap:latest`
 
 ### Building
 
 Clone the repo   
-`git clone git@github.com:architexas/yii2-mssql.git`  
+`git clone git@github.com:mindcontact/yii2-mssql-ldap.git`  
   
 Build the image    
 `docker build .`   
@@ -28,13 +28,8 @@ Build the image
 
 | Tag                                                                  | Description                                                                |
 | -------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Latest                                                               | Tag 2.0.0                                                                  |
-| [2.0.0](https://github.com/architexas/yii2-mssql/releases/tag/2.0.0) | Upgraded PHP, Debian, XDebug, Apache, MSSQL drivers and other dependencies |
-| [1.1.2](https://github.com/architexas/yii2-mssql/releases/tag/1.1.2) | Removed idekey configuration to allow all IDEs to connect.                 |
-| [1.1.1](https://github.com/architexas/yii2-mssql/releases/tag/1.1.1) | Changed XDebug port to 9000 and added a few more configurations.           |
-| [1.1.0](https://github.com/architexas/yii2-mssql/releases/tag/1.1.0) | Added Xdebug, more default settings, and more documentation                |
-| [1.0.1](https://github.com/architexas/yii2-mssql/releases/tag/1.0.1) | Added documentation on the image's structure                               |
-| [1.0.0](https://github.com/architexas/yii2-mssql/releases/tag/1.0.0) | First image: PHP with MSSQL drivers and some additional tools              |
+| Latest                                                               | Tag 1.0.0                                                                  |
+| [1.0.0](https://github.com/mindcontact/yii2-mssql-ldap/releases/tag/1.0.0) | First image: Added LDAP support in [architexas/yii2-mssql](https://github.com/architexas/yii2-mssql) work  |
 
 ### Included
 

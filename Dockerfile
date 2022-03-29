@@ -1,6 +1,6 @@
-# Name: Yii2-mssql
-# Version: 2.0.0
-# Description: A Yii2 Framework image with Microsoft's SQL drivers
+# Name: Yii2-mssql-ldap
+# Version: 1.0.0
+# Description: A Yii2 Framework image with Microsoft's SQL drivers and LDAP support
 
 #-------------------------------------------------------------------
 # I. BASE IMAGE
