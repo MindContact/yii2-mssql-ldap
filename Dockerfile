@@ -29,6 +29,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 
     # Set Yii2 image's environment variable                                                                             Step 4
 ENV PHP_ENABLE_XDEBUG 1
+ENV PHP_USER_ID = 1000
 
 # Configure LDAP.
 RUN apt-get update \
